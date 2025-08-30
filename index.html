@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subbu Constructions - Professional Construction Services & Quality Building Solutions</title>
-    <meta name="description" content="Subbu Constructions offers professional construction services including residential, commercial, and industrial projects. Quality building solutions with over a decade of experience. Get your free quote today.">
+    <meta name="description"
+        content="Subbu Constructions offers professional construction services including residential, commercial, and industrial projects. Quality building solutions with over a decade of experience. Get your free quote today.">
     <meta name="author" content="Subbu Constructions">
     <link rel="stylesheet" href="cons.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID"); // Replace with your actual User ID
+   })();
+</script>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="nav">
@@ -36,7 +45,7 @@
                 <span class="hero-title-accent">You Can Trust</span>
             </h1>
             <p class="hero-description">
-                From residential homes to commercial complexes, we deliver exceptional construction 
+                From residential homes to commercial complexes, we deliver exceptional construction
                 services with uncompromising quality and attention to detail.
             </p>
             <div class="hero-buttons">
@@ -52,7 +61,7 @@
             <div class="section-header">
                 <h2 class="section-title">About Subbu Constructions</h2>
                 <p class="section-subtitle">
-                    With over a decade of experience, we've built a reputation for excellence, 
+                    With over a decade of experience, we've built a reputation for excellence,
                     reliability, and innovation in the construction industry.
                 </p>
             </div>
@@ -210,13 +219,13 @@
                 <div class="contact-form">
                     <div class="form-card">
                         <h3>Request a Quote</h3>
-                        <form id="contactForm">
-  <input name="name" type="text" placeholder="Your Name" required>
-  <input name="email" type="email" placeholder="Your Email" required>
-  <input name="phone" type="tel" placeholder="Phone Number" required>
-  <textarea name="message" placeholder="Project Details" rows="4" required></textarea>
-  <button type="submit" class="btn btn-construction btn-lg btn-full">Send Message</button>
-</form>
+                        <form id="contact-form">
+                            <input name="name" type="text" placeholder="Your Name" required>
+                            <input name="email" type="email" placeholder="Your Email" required>
+                            <input name="phone" type="tel" placeholder="Phone Number" required>
+                            <textarea name="message" placeholder="Project Details" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-construction btn-lg btn-full">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -235,5 +244,26 @@
     </footer>
 
     <script src="cons.js"></script>
+    <script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "YOUR_SERVICE_ID",   // e.g. service_xxxxxx
+        "YOUR_TEMPLATE_ID",  // e.g. template_yyyyyy
+        this
+    ).then(
+        function() {
+            alert("✅ Your message has been sent!");
+        },
+        function(error) {
+            alert("❌ Failed to send message. Try again.");
+            console.log("Error:", error);
+        }
+    );
+});
+</script>
+
 </body>
+
 </html>
